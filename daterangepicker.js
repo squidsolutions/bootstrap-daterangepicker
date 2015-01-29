@@ -95,6 +95,8 @@
             .on('click.daterangepicker', 'td.available', $.proxy(this.clickDate, this))
             .on('mouseenter.daterangepicker', 'td.available', $.proxy(this.hoverDate, this))
             .on('mouseleave.daterangepicker', 'td.available', $.proxy(this.updateFormInputs, this))
+            .on('click.daterangepicker', '.prev', $.proxy(this.updateMonthYear, this))
+            .on('click.daterangepicker', '.next', $.proxy(this.updateMonthYear, this))
             .on('change.daterangepicker', 'select.yearselect', $.proxy(this.updateMonthYear, this))
             .on('change.daterangepicker', 'select.monthselect', $.proxy(this.updateMonthYear, this))
             .on('change.daterangepicker', 'select.hourselect,select.minuteselect,select.secondselect,select.ampmselect', $.proxy(this.updateTime, this));
@@ -739,6 +741,7 @@
                 this.rightCalendar.month.subtract(1, 'month');
             }
             this.updateCalendars();
+            this.element.trigger('change.daterangepickerLeft');
         },
 
         clickNext: function (e) {
@@ -749,6 +752,7 @@
                 this.rightCalendar.month.add(1, 'month');
             }
             this.updateCalendars();
+            this.element.trigger('change.daterangepickerRight');
         },
 
         hoverDate: function (e) {
