@@ -766,7 +766,7 @@
                 this.rightCalendar.month.subtract(1, 'month');
             }
             this.updateCalendars();
-            this.element.trigger('change.daterangepickerLeft');
+            this.element.trigger('change.daterangepickerLeft', cal);
         },
 
         clickNext: function (e) {
@@ -777,7 +777,7 @@
                 this.rightCalendar.month.add(1, 'month');
             }
             this.updateCalendars();
-            this.element.trigger('change.daterangepickerRight');
+            this.element.trigger('change.daterangepickerRight', cal);
         },
 
         hoverDate: function (e) {
