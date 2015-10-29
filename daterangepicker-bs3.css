@@ -308,8 +308,9 @@
 }
 
 .daterangepicker select.monthselect {
-  margin-right: 2%;
-  width: 56%;
+  	float: left;
+	width: 50%;
+	margin-right: 10px;
 }
 
 .daterangepicker select.yearselect {

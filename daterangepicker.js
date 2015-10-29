@@ -1048,7 +1048,7 @@
             var maxYear = (maxDate && maxDate.year()) || (currentYear + 5);
             var minYear = (minDate && minDate.year()) || (currentYear - 50);
 
-            var monthHtml = '<select class="monthselect">';
+            var monthHtml = '<select class="monthselect form-control">';
             var inMinYear = currentYear == minYear;
             var inMaxYear = currentYear == maxYear;
 
@@ -1061,7 +1061,7 @@
             }
             monthHtml += "</select>";
 
-            var yearHtml = '<select class="yearselect">';
+            var yearHtml = '<select class="yearselect form-control">';
 
             for (var y = minYear; y <= maxYear; y++) {
                 yearHtml += '<option value="' + y + '"' +
