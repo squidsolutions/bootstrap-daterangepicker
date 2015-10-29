@@ -905,9 +905,9 @@
             this[leftOrRight+'Calendar'].month.month(month).year(year);
             this.updateCalendars();
             if (isLeft) {
-                this.element.trigger('change.daterangepickerLeft');
+                this.element.trigger('change.daterangepickerLeft', cal);
             } else {
-                this.element.trigger('change.daterangepickerRight');
+                this.element.trigger('change.daterangepickerRight', cal);
             } 
         },
 
