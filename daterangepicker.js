@@ -777,6 +777,8 @@
             } else {
                 this.rightCalendar.month.subtract(1, 'month');
             }
+            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+            console.log(this.rightCalendar);
             this.updateCalendars();
             this.element.trigger('change.daterangepickerLeft', cal);
         },
@@ -1087,8 +1089,6 @@
         },
 
         renderCalendar: function (calendar, selected, minDate, maxDate, side) {
-            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
 
             var html = '<div class="calendar-date">';
             html += '<table class="table-condensed">';
