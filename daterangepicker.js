@@ -1087,6 +1087,8 @@
         },
 
         renderCalendar: function (calendar, selected, minDate, maxDate, side) {
+            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
 
             var html = '<div class="calendar-date">';
             html += '<table class="table-condensed">';
