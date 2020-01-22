@@ -497,10 +497,6 @@
         },
 
         updateFormInputs: function () {
-            console.log('UPDATE FORM INPUTS');
-            console.log(this.startDate);
-            console.log(this.startDate.format(this.format));
-            console.log(this.format);
             this.container.find('input[name=daterangepicker_start]').val(this.startDate.format("YYYY-MM-01"));
             this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.format));
 
@@ -702,7 +698,6 @@
 
         // when a date is typed into the start to end date textboxes
         inputsChanged: function (e) {
-            console.log('INPUTS CHANGED');
             var el = $(e.target);
             var date = moment(el.val(), this.format);
             if (!date.isValid()) return;
