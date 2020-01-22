@@ -497,7 +497,6 @@
         },
 
         updateFormInputs: function () {
-            console.log('UPDATE FORM INPUTS')
             this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.format));
             this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.format));
 
@@ -509,7 +508,6 @@
         },
 
         updateFromControl: function () {
-            console.log('UPDATE FORM CONTROL')
             if (!this.element.is('input')) return;
             if (!this.element.val().length) return;
 
@@ -676,7 +674,6 @@
         },
 
         enterRange: function (e) {
-            Console.LOG('enter range')
             // mouse pointer has entered a range label
             var label = e.target.innerHTML;
             if (label == this.locale.customRangeLabel) {
@@ -701,7 +698,6 @@
 
         // when a date is typed into the start to end date textboxes
         inputsChanged: function (e) {
-            console.log('Inputs changed');
             var el = $(e.target);
             var date = moment(el.val(), this.format);
             if (!date.isValid()) return;
@@ -726,6 +722,7 @@
                     }
                 }
             }
+            console.log(startDate);
             this.setCustomDates(startDate, endDate);
         },
 
@@ -737,7 +734,6 @@
         },
 
         updateInputText: function() {
-            console.log('UPDATE INPUT TEXT');
             if (this.element.is('input') && !this.singleDatePicker) {
                 this.element.val(this.startDate.format(this.format) + this.separator + this.endDate.format(this.format));
                 this.element.trigger('change');
@@ -782,7 +778,6 @@
             } else {
                 this.rightCalendar.month.subtract(1, 'month');
             }
-            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
             this.leftCalendar.month.day(1)
             this.updateCalendars();
             this.element.trigger('change.daterangepickerLeft', cal);
