@@ -298,7 +298,6 @@
             //if no start/end dates set, check if an input element contains initial values
             if (typeof options.startDate === 'undefined' && typeof options.endDate === 'undefined') {
                 if ($(this.element).is('input[type=text]')) {
-                    console.log('START')
                     var val = $(this.element).val(),
                         split = val.split(this.separator);
 
@@ -499,6 +498,9 @@
 
         updateFormInputs: function () {
             console.log('UPDATE FORM INPUTS');
+            console.log(this.startDate);
+            console.log(this.startDate.format(this.format));
+            console.log(this.format);
             this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.format));
             this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.format));
 
@@ -510,7 +512,6 @@
         },
 
         updateFromControl: function () {
-            console.log('UPDATE FROM CONTROL');
             if (!this.element.is('input')) return;
             if (!this.element.val().length) return;
 
@@ -677,8 +678,6 @@
         },
 
         enterRange: function (e) {
-
-            console.log('ENTER RANGE');
             // mouse pointer has entered a range label
             var label = e.target.innerHTML;
             if (label == this.locale.customRangeLabel) {
@@ -728,7 +727,6 @@
                     }
                 }
             }
-            console.log(startDate);
             this.setCustomDates(startDate, endDate);
         },
 
@@ -740,7 +738,6 @@
         },
 
         updateInputText: function() {
-            console.log('UPDATE INPUT TEXT');
             if (this.element.is('input') && !this.singleDatePicker) {
                 this.element.val(this.startDate.format(this.format) + this.separator + this.endDate.format(this.format));
                 this.element.trigger('change');
@@ -802,7 +799,6 @@
         },
 
         hoverDate: function (e) {
-            console.log('HOVER DATE');
             var title = $(e.target).attr('data-title');
             var row = title.substr(1, 1);
             var col = title.substr(3, 1);
