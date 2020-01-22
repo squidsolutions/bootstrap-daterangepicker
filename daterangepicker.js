@@ -734,6 +734,7 @@
 
         updateInputText: function() {
             if (this.element.is('input') && !this.singleDatePicker) {
+                console.log(this.element);
                 this.element.val(this.startDate.format(this.format) + this.separator + this.endDate.format(this.format));
                 this.element.trigger('change');
             } else if (this.element.is('input')) {
@@ -778,7 +779,7 @@
                 this.rightCalendar.month.subtract(1, 'month');
             }
             console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-            console.log(this.rightCalendar);
+            this.leftCalendar.month.day(1)
             this.updateCalendars();
             this.element.trigger('change.daterangepickerLeft', cal);
         },
