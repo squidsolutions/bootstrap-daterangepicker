@@ -501,7 +501,7 @@
             console.log(this.startDate);
             console.log(this.startDate.format(this.format));
             console.log(this.format);
-            this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.format));
+            this.container.find('input[name=daterangepicker_start]').val(this.startDate.format("YYYY-MM-01"));
             this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.format));
 
             if (this.startDate.isSame(this.endDate) || this.startDate.isBefore(this.endDate)) {
