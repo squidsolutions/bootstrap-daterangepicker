@@ -777,7 +777,6 @@
             } else {
                 this.rightCalendar.month.subtract(1, 'month');
             }
-            this.leftCalendar.month.day(1)
             this.updateCalendars();
             this.element.trigger('change.daterangepickerLeft', cal);
         },
