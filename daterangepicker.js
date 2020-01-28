@@ -180,6 +180,9 @@
             if (typeof options.startDate === 'object')
                 this.startDate = moment(options.startDate);
 
+            if (typeof options.startDateFormat === 'string')
+                this.startDateFormat = options.startDateFormat;
+ 
             if (typeof options.endDate === 'object')
                 this.endDate = moment(options.endDate);
 
@@ -497,7 +500,12 @@
         },
 
         updateFormInputs: function () {
-            this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.format));
+            if(this.startDateFormat){
+                this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.startDateFormat));
+            }
+            else{
+                this.container.find('input[name=daterangepicker_start]').val(this.startDate.format(this.format));
+            }
             this.container.find('input[name=daterangepicker_end]').val(this.endDate.format(this.format));
 
             if (this.startDate.isSame(this.endDate) || this.startDate.isBefore(this.endDate)) {
